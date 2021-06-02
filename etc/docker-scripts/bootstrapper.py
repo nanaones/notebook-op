@@ -413,7 +413,6 @@ def main():
                         level=logging.INFO)
     # Setup packages and gather arguments
     input_params = OpUtil.parse_arguments(sys.argv[1:])
-    logging.info(input_params)
     OpUtil.log_operation_info("starting operation")
     t0 = time.time()
     OpUtil.package_install()
