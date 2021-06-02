@@ -199,7 +199,7 @@ class NotebookFileOp(FileOpBase):
 
         try:
             OpUtil.log_operation_info(f"executing notebook using 'papermill {notebook} {notebook_output}'")
-            OpUtil.log_operation_info(f"papermill params %s", self.input_params)
+            OpUtil.log_operation_info(f"papermill params %s", self.input_params.keys())
             t0 = time.time()
             # Really hate to do this but have to invoke Papermill via library as workaround
             import papermill
