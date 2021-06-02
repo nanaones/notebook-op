@@ -202,7 +202,7 @@ class NotebookFileOp(FileOpBase):
             t0 = time.time()
             # Really hate to do this but have to invoke Papermill via library as workaround
             import papermill
-            papermill.execute_notebook(notebook, notebook_output)
+            papermill.execute_notebook(notebook, notebook_output, parameters=self.input_params)
             duration = time.time() - t0
             OpUtil.log_operation_info("notebook execution completed", duration)
 
@@ -411,6 +411,7 @@ def main():
                         level=logging.INFO)
     # Setup packages and gather arguments
     input_params = OpUtil.parse_arguments(sys.argv[1:])
+    logging.info(input_params)
     OpUtil.log_operation_info("starting operation")
     t0 = time.time()
     OpUtil.package_install()
