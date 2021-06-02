@@ -32,16 +32,9 @@ INOUT_SEPARATOR = ';'
 ELYRA_GITHUB_ORG = os.getenv("ELYRA_GITHUB_ORG", "elyra-ai")
 ELYRA_GITHUB_BRANCH = os.getenv("ELYRA_GITHUB_BRANCH", "master" if 'dev' in __version__ else "v" + __version__)
 
-ELYRA_BOOTSTRAP_SCRIPT_URL = os.getenv('ELYRA_BOOTSTRAP_SCRIPT_URL', 'https://raw.githubusercontent.com/{org}/'
-                                                                     'airflow-notebook/{branch}/etc/docker-scripts/'
-                                                                     'bootstrapper.py'.
-                                                                     format(org=ELYRA_GITHUB_ORG,
-                                                                            branch=ELYRA_GITHUB_BRANCH))
+ELYRA_BOOTSTRAP_SCRIPT_URL = os.getenv('ELYRA_BOOTSTRAP_SCRIPT_URL', 'https://raw.githubusercontent.com/nanaones/notebook-op/master/etc/docker-scripts/bootstrapper.py')
 
-ELYRA_REQUIREMENTS_URL = os.getenv('ELYRA_REQUIREMENTS_URL', 'https://raw.githubusercontent.com/{org}/'
-                                                             'airflow-notebook/{branch}/etc/requirements-elyra.txt'.
-                                                             format(org=ELYRA_GITHUB_ORG,
-                                                                    branch=ELYRA_GITHUB_BRANCH))
+ELYRA_REQUIREMENTS_URL = os.getenv('ELYRA_REQUIREMENTS_URL', 'https://raw.githubusercontent.com/nanaones/notebook-op/master/etc/requirements-elyra.txt')
 
 
 @apply_defaults
