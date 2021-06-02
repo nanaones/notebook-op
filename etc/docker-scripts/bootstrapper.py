@@ -414,7 +414,7 @@ def main():
     OpUtil.log_operation_info("starting operation")
     t0 = time.time()
     OpUtil.package_install()
-    logger.info(**input_params)
+    logger.info(input_params)
     
     # Create the appropriate instance, process dependencies and execute the operation
     file_op = FileOpBase.get_instance(**input_params)
